@@ -11,7 +11,7 @@ let questionCounter = 0;
 let availableQuestions = [];
 
 /*audio settings*/
-var x = null;
+var x =  document.getElementById("myAudio"); ;
 // var x = document.getElementById("myAudio"); 
 // x.volume = 0.3;
 // var dogBark = document.getElementById("dogBark");
@@ -35,7 +35,7 @@ function playAudio(arg) {
 	}	
 } 
 function stopAudio() { 
-	x.stop();
+	x.stop;
 } 
 
 let questions = [  
