@@ -10,6 +10,10 @@ let score = 0;
 let questionCounter = 0;
 let availableQuestions = [];
 
+// if(!confirm("Press yes to continue")){
+// 	window.location.assign("../index.html");
+// }
+
 /*audio settings*/
 var x =  document.getElementById("myAudio"); ;
 // var x = document.getElementById("myAudio"); 
@@ -200,7 +204,7 @@ let questions = [
 ];
 
 const CORRECT_BONUS = 10;
-const MAX_QUESTIONS = 7;
+const MAX_QUESTIONS = 20;
 
 startGame = () => {
 	questionCounter = 0;

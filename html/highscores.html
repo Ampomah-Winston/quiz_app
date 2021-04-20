@@ -6,10 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="../css/app.css">   
-    <link rel="stylesheet" type="text/css" href="../css/highScore.css">   
+    <link rel="stylesheet" type="text/css" href="../css/highScore.css">  
+    <link rel="icon" href="../images/oldRustic.JFIF"> 
     <title>Highscores</title>
 </head>
 <body style="background-image: url('../images/oldRustic.JFIF');">
+    <audio id="myAudio">	
+	  <source src="../sounds/Ruinion.mp3" type="audio/mpeg">
+	  Your browser does not support the audio element.
+	</audio>
 	<div class="container container_fence">		
 			<div id="highScores" class="flex-center flex-column">
             
@@ -24,5 +29,17 @@
             </div>                        
     </div>  
    <script src="../js/highScorel.js"></script>   
+   <script type="text/javascript">
+		var x = document.getElementById("myAudio"); 
+		playAudio();
+		function playAudio() { 
+			x.loop=true;
+			x.volume = 0.3;
+		  	x.play(); 
+		} 
+		function stopAudio() { 
+			x.stop();
+		} 
+	</script>
 </body>
 </html>
