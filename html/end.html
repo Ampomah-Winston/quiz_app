@@ -7,7 +7,7 @@
 	  <link rel="stylesheet" type="text/css" href="../css/app.css">   
 	<title>Game end</title>
 </head>
-<body>
+<body style="background-image: url('../images/oldRustic.JFIF');">
 		<div class="container container_fence">		
 			<div id="end" class="flex-center flex-column">
 				<h1 id="finalScore"> 0 </h1>
@@ -17,14 +17,23 @@
 						Save
 					</Button>				
 				</form>
-					<Button type="submit" class="btn" id="" >
-						Play Again
-					</Button>
-					<Button type="submit" class="btn" id="">
+					<a type="submit" class="btn" id="" onclick="getTo('game')">
+						Play Again		
+					</a>			
+					<a type="submit" class="btn" id="" onclick="getTo('home')">
 						Go Home
-					</Button>
+					</a>
 			</div>	
 		</div>	
 <script src="../js/end.js"></script>	
+	<script>
+		function getTo(arg){
+			if(arg=='home'){
+				window.location.assign("../index.html");
+			}else if(arg=='game'){
+				window.location.assign("../html/game.html");
+			}
+		}
+	</script>
 </body>
 </html>

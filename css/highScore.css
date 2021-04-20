@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
+
+#highScoreList{
+    margin-bottom: 4;
+    border-color: red;
+}
+
+.high-score{
+    font-family: 'Ubuntu Mono', monospace;
+    font-size: 30px;
+    list-style: none;
+    color:brown;
+    font-weight: bold;
+    text-align: center;
+    padding: 1.5rem;
+}
+
+li:first-child{
+    background-color: gold;
+    color: black;
+    border-width: 2px;
+}

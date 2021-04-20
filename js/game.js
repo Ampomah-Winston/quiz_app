@@ -11,20 +11,27 @@ let questionCounter = 0;
 let availableQuestions = [];
 
 /*audio settings*/
-var x = document.getElementById("myAudio"); 
-x.volume = 0.3;
-var dogBark = document.getElementById("dogBark");
-dogBark.volume = 0.3;
-var applauds = document.getElementById("applauds");
-applauds.volume = 0.3;
+var x = null;
+// var x = document.getElementById("myAudio"); 
+// x.volume = 0.3;
+// var dogBark = document.getElementById("dogBark");
+// dogBark.volume = 0.3;
+// var applauds = document.getElementById("applauds");
+// applauds.volume = 0.3;
 
 function playAudio(arg) { 
 	if(arg == 'default') {
+		x = document.getElementById("myAudio"); 
+		x.volume = 0.3;
 		x.play(); 
 	} else if(arg == 'dogBark'){
-		dogBark.play();
+		x = document.getElementById("dogBark"); 
+		x.volume = 0.3;
+		x.play();
 	}else{
-		applauds.play();
+		x = document.getElementById("applauds");
+		x.volume = 0.3;
+		x.play();
 	}	
 } 
 function stopAudio() { 
@@ -193,7 +200,7 @@ let questions = [
 ];
 
 const CORRECT_BONUS = 10;
-const MAX_QUESTIONS =3;
+const MAX_QUESTIONS = 7;
 
 startGame = () => {
 	questionCounter = 0;
@@ -224,7 +231,7 @@ getNewQuestion = () => {
 
 	availableQuestions.splice(questionIndex, 1);
 	acceptAnswers =true;
-
+	stopAudio();
 }
 	choices.forEach(choice => {
 		choice.addEventListener('click',e =>{
