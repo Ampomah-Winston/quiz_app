@@ -22,17 +22,42 @@
 	<div class="container container_fence" >
 		<div id="home" class="flex-center flex-column">
 			<h1 style="background-color: white;width: 100%; text-align: center; padding: 5px;">QUiZ</h1>
-			  <a href="html/game.html" class="btn" onclick="stopAudio()">
+			  <a href="html/game.html" class="btn" onclick="setAttr()">
 			  	<i class="fa fa-gamepad" aria-hidden="true" style="color: #8f5e14; font-size: 30px;"></i>
 			
 			  </a>
-			  <a href="html/highscores.html" class="btn" onclick="stopAudio()">
+			  <a href="html/highscores.html" class="btn" onclick="">
 			  <i class="fa fa-trophy" aria-hidden="true" style="color: #8f5e14; font-size: 30px;"></i>
 			  </a>
+			  <div>
+				<select id="subject"  style="text-align:center;"> 
+					<option >General Knowledge</option> 
+					<option>Computer Science</option> 
+					<option>Science & Nature</option> 
+				</select> 
+			  </div>
+
+			  <div>
+				<select id="difficulty"> 
+					<option>Easy</option> 
+					<option>Medium</option> 
+					<option>Hard</option> 
+				</select> 
+			  </div>
+
+			  <div>
+				<select id="numOfQuest"> 
+					<option>10</option> 
+					<option>25</option> 
+					<option>30</option> 
+				</select> 
+			  </div>
+
 			  <h3 style="background-color: white;width: 100%; text-align: center; padding: 5px; margin-top:10px;">Welcome, Press <i class="fa fa-gamepad" aria-hidden="true" style="color: #8f5e14; font-size: 15px;"></i> to start or <i class="fa fa-trophy" aria-hidden="true" style="color: #8f5e14; font-size: 15px;"></i> to see highscores </h3>
 		</div>
 	</div>
-	<script type="text/javascript">
+	<script type="text/javascript">	
+
 		var x = document.getElementById("myAudio"); 
 		playAudio();
 		function playAudio() { 
@@ -40,8 +65,14 @@
 			x.volume = 0.3;
 		  	x.play(); 
 		} 
-		function stopAudio() { 
-			x.stop();
+		function setAttr() { 
+			const subject = document.getElementById("subject");
+			const difficulty = document.getElementById("difficulty");
+			const numOfQuest = document.getElementById("numOfQuest");
+
+			localStorage.setItem("subject",subject.value.trim());
+			localStorage.setItem("difficulty",difficulty.value.trim());
+			localStorage.setItem("numOfQuest",numOfQuest.value.trim());
 		} 
 	</script>
 </body>
