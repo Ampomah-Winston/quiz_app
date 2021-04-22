@@ -7,6 +7,7 @@
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="../css/app.css">   
     <link rel="stylesheet" type="text/css" href="../css/highScore.css">  
+    <link rel="stylesheet" type="text/css" href="../css/drop.css">  
     <link rel="icon" href="../images/oldRustic.JFIF"> 
     <title>Highscores</title>
 </head>
@@ -16,20 +17,54 @@
 	  Your browser does not support the audio element.
 	</audio>
 	<div class="container container_fence">		
-			<div id="highScores" class="flex-center flex-column">
-            
+			      <div id="highScores" class="flex-center flex-column">            
                 <h1 id="finalScore">High Scores</h1>
-              <div>
-                <ul id ="highScoreList" > <ul/> 
-              </div>   
+
+                <button onclick="myFunction1()" class="dropbtn" >General Knowledge</button>               
+                <ul id ="gk_scoreList" class="dropdown-content"> </ul>     
+
+                <button onclick="myFunction2()" class="dropbtn">Science & Nature</button>               
+                <ul id ="sciNate_scoreList" class="dropdown-content"> </ul>  
+
+                <button onclick="myFunction3()" class="dropbtn">Science & Nature</button>               
+                <ul id ="SciComp_scoreList" class="dropdown-content"> </ul>     
 
                 <a class="btn" href="../index.html" style="margin-top:10px">
                     <i class="fa fa-home" aria-hidden="true" style="color: #8f5e14; font-size: 30px;"></i>
-                 </a>               
+                </a>               
             </div>                        
     </div>  
    <script src="../js/highScorel.js"></script>   
    <script type="text/javascript">
+    function myFunction1() {
+      document.getElementById("gk_scoreList").classList.toggle("show");
+    }
+
+    function myFunction2() {
+      document.getElementById("sciNate_scoreList").classList.toggle("show");
+    }
+
+    function myFunction3() {
+      document.getElementById("SciComp_scoreList").classList.toggle("show");
+    }
+
+    // Close the dropdown menu if the user clicks outside of it
+      window.onclick = function(event) {
+        if (!event.target.matches('.dropbtn')) {
+          var dropdowns = document.getElementsByClassName("dropdown-content");
+          var i;
+          for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+              openDropdown.classList.remove('show');
+            }
+          }
+        }
+      }
+
+
+
+
 		var x = document.getElementById("myAudio"); 
 		playAudio();
 		function playAudio() { 

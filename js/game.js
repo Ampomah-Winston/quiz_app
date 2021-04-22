@@ -22,7 +22,6 @@ let availableQuestions = [];
 
 let questions =[];
 
-
 function myApi (subjec,diffic,numberQuest) {
 	console.log(diffic);
 	let cat = "0";
@@ -94,7 +93,7 @@ fetch(myApi(subject,difficulty.toLowerCase(),numOfQuest)).then(res=>{
 })
 
 
-const MAX_QUESTIONS = numOfQuest;
+const MAX_QUESTIONS = 2;
 
 var x =  document.getElementById("myAudio"); ;
 
@@ -127,7 +126,7 @@ startGame = () => {
 
 getNewQuestion = () => {
 	if(availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS){
-		localStorage.setItem(subject , score);
+		localStorage.setItem('mostRecentScore_git' , score);
 		return  window.location.assign("../html/end.html");
 	}	
 	questionCounter++;
