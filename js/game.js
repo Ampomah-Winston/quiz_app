@@ -93,7 +93,7 @@ fetch(myApi(subject,difficulty.toLowerCase(),numOfQuest)).then(res=>{
 })
 
 
-const MAX_QUESTIONS = 2;
+const MAX_QUESTIONS = numOfQuest;
 
 var x =  document.getElementById("myAudio"); ;
 

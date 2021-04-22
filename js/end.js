@@ -44,5 +44,5 @@ saveHighScore = (e) =>{
             break;
     }
     
-    // window.location.assign("../html/highscores.html");
+    window.location.assign("../html/highscores.html");
 }
